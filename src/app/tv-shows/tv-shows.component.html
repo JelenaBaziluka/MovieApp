@@ -1,0 +1,25 @@
+<div class="row">
+  <ul>
+      <li *ngFor= "let movie of movies; let i=index">
+          <div class="col s3">
+              <div class="card" appHover>
+                <div class="card-image">
+                  <img src="{{movie.image}}">
+                           </div>
+                <div class="card-content">
+                    <p ><b>{{movie.original_name |uppercase }}</b></p>
+                  <p><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {{movie.first_air_date}} </p>
+                  <p>Movie laguage: {{ movie.original_language }}</p>
+                  <p>Movie rate: <span class="glyphicon glyphicon-star" aria-hidden="true"></span> {{ movie.vote_average }}</p>
+                </div>
+                <div class="card-action">
+                    <a class="waves-effect waves-light btn"
+                    (click)="onClick()">More</a>
+                    <button class="btn btn-default" (click)="playMovie(movie)" ><span class="glyphicon glyphicon-play"></span></button>
+                </div>
+              </div>
+            </div>
+          
+    </li>
+    </ul>
+    </div>
